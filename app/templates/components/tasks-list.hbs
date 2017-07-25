@@ -1,0 +1,16 @@
+<div class='input-group add-task-container'>
+  {{input value=newTask.title class='form-control'}}
+  <div class='input-group-btn'>
+    <button class='btn btn-success' {{action "addTask"}}>
+      <span>Add task</span>
+    </button>
+  </div>
+</div>
+
+<table class='table table-striped table-hover'>
+  <tbody>
+    {{#each sortedTasks as |task|}}
+      {{task-item task=task moveTaskUp=(action 'moveTaskUp') moveTaskDown=(action 'moveTaskDown') removeTask=(action 'removeTask')}}
+    {{/each}}
+  </tbody>
+</table>

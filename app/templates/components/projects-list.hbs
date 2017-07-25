@@ -1,0 +1,14 @@
+<ul class='row'>
+  {{#each projects as |project|}}
+    <li class='col-xs-10 col-xs-offset-1 project-wrapper'>
+      {{project-item project=project removeProject=(action "removeProject")}}
+    </li>
+  {{/each}}
+</ul>
+
+<div class='text-center'>
+  <button class='btn btn-primary add-project btn-lg' {{action "addProject"}}>
+    <i class='glyphicon glyphicon-plus'/>
+    Add Project
+  </button>
+</div>

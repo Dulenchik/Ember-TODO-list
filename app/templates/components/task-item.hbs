@@ -1,0 +1,43 @@
+<td>
+  {{input type="checkbox" name="isDone" checked=task.isDone change=(action "toggleDoneState")}}
+</td>
+
+<td>
+  {{#if task.isEditable}}
+    <div class='input-group'>
+      {{input value=task.title class='form-control'}}
+      <div class='input-group-btn'>
+        <button class='btn btn-success' {{action "update"}}>
+          <span class='glyphicon glyphicon-ok' />
+        </button>
+
+        <button class='btn btn-danger' {{action "cancel"}}>
+          <span class='glyphicon glyphicon-remove' />
+        </button>
+      </div>
+    </div>
+  {{else}}
+    <span class='{{if task.isDone 'text-muted'}}'>
+      {{task.title}}
+    </span>
+  {{/if}}
+</td>
+
+<td class='text-right'>
+  <div class='actions btn-group'>
+    <button class='btn btn-default btn-sm' {{action "moveTaskUp"}}>
+      <span class='glyphicon glyphicon-triangle-top' />
+    </button>
+    <button class='btn btn-default btn-sm' {{action "moveTaskDown"}}>
+      <span class='glyphicon glyphicon-triangle-bottom' />
+    </button>
+    {{#unless task.isEditable}}
+      <button class='btn btn-default btn-sm' {{action "edit"}}>
+        <span class='glyphicon glyphicon-pencil' />
+      </button>
+    {{/unless}}
+    <button class='btn btn-default btn-sm' {{action "removeTask"}}>
+      <span class='glyphicon glyphicon-trash' />
+    </button>
+  </div>
+</td>

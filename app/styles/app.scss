@@ -1,0 +1,46 @@
+@import 'reset';
+@import 'bootstrap';
+
+body {
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/94/c4/cd/94c4cd6e3b0dde10dc705ff68b232e68.jpg');
+}
+
+.project-wrapper {
+  .panel-heading {
+    .glyphicon-list-alt {
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
+  }
+
+  & + .project-wrapper {
+    margin-top: 1.75em;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .panel-title {
+    line-height: 2.15em;
+  }
+}
+
+.add-project {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.actions {
+  visibility: hidden;
+}
+
+tr:hover {
+  .actions {
+    visibility: visible;
+  }
+}
+
+.add-task-container {
+  margin-bottom: 1em;
+}
